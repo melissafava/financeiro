@@ -1,5 +1,11 @@
 <?php
 require_once 'config.php';
+
+// verificar se o usuario esta logado
+if (!isset($_SESSION['usuario_id'])){
+    header('Location: login.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
