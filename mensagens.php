@@ -1,5 +1,5 @@
 <?php
-// função para definir uma mensagem
+// função para definir uma mensagem 
 function set_mensagem($mensagem, $tipo)
 {
     $_SESSION['mensagem'] = $mensagem;

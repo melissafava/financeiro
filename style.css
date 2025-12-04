@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(182, 237, 199);
+}
+
+h1{
+    color: darkgreen;
+    background-color: lawngreen;
+    border: 7px solid;
+    border-color:green;
+    border-radius: 10px;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+
+button{
+    font-size: 30px;
+    color: darkgreen;
+    background-color: greenyellow;
+    border: 6px solid;
+    border-color:green;
+    border-radius: 10px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+form{
+    text-align: center;
+    font-size: 30px;
+    color: darkgreen;
+    font-family:'Times New Roman', Times, serif;
+}
+
+p{
+    text-align: center;
+    font-size: 25px;
+    color: darkgreen;
+    font-family:'Times New Roman', Times, serif;
+}
+
+a{
+    color: rgb(110, 192, 83);
+}
+
+label, input{
+    border-radius: 30px;
+    border-color: darkgreen;
+    background-color: rgb(228, 253, 233);
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    color: darkgreen;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+}
