@@ -1,9 +1,9 @@
 <?php
 require_once 'config.php';
 
-// Verificar se o usuário está logado
+// Verificar se o usuário já está logado
 if (isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit;
 }
 ?>
@@ -28,7 +28,9 @@ if (isset($_SESSION['usuario_id'])) {
             <label for="senha">Senha:</label>
             <input type="password" name="senha" id="senha" required>
         </div>
-        <button type="submit">Entrar</button>
+        <div>
+            <button type="submit">Entrar</button>
+        </div>
     </form>
 
     <p>Não tem conta? <a href="registro.php">Cadastre-se aqui.</a></p>
