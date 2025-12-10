@@ -1,54 +1,74 @@
-body{
-    background-color: rgb(182, 237, 199);
-}
-
 h1{
-    color: darkgreen;
-    background-color: lawngreen;
+    color: darkcyan;
+    background-color: rgb(110, 214, 209);
     border: 7px solid;
-    border-color:green;
+    border-color:darkcyan;
     border-radius: 10px;
     text-align: center;
-    font-family:'Times New Roman', Times, serif;
+    /* font-family:'Times New Roman', Times, serif; */
     
 }
 
 button{
     font-size: 30px;
-    color: darkgreen;
-    background-color: greenyellow;
+    color: darkcyan;
+    background-color: rgb(110, 214, 209);
     border: 6px solid;
-    border-color:green;
+    border-color:darkcyan;
     border-radius: 10px;
-    font-family:'Times New Roman', Times, serif;
+    /* font-family:'Times New Roman', Times, serif; */
 }
 
 form{
     text-align: center;
     font-size: 30px;
-    color: darkgreen;
-    font-family:'Times New Roman', Times, serif;
+    color: darkcyan;
+    /* font-family:'Times New Roman', Times, serif; */
 }
 
 p{
     text-align: center;
     font-size: 25px;
-    color: darkgreen;
-    font-family:'Times New Roman', Times, serif;
+    color: darkcyan;
+    /* font-family:'Times New Roman', Times, serif; */
 }
 
 a{
-    color: rgb(110, 192, 83);
+    color: lightseagreen;
 }
 
 label, input{
     border-radius: 30px;
-    border-color: darkgreen;
-    background-color: rgb(228, 253, 233);
+    border-color: darkcyan;
+    background-color: rgb(246, 254, 255);
     width: 150px;
     height: 30px;
     text-align: center;
-    color: darkgreen;
-    font-family:'Times New Roman', Times, serif;
+    color: darkcyan;
+    /* font-family:'Times New Roman', Times, serif; */
     font-weight: bold;
+}
+
+/* table{
+    font-family:'Times New Roman', Times, serif;
+} */
+
+table thead{
+    color: darkcyan;
+}
+
+table tbody{
+    color: rgb(110, 214, 209);
+}
+
+table a{
+    color: lightseagreen;
+}
+
+body{
+    background-color: rgb(221, 253, 255);
+}
+
+h2, h3{
+    color: darkcyan;
 }
