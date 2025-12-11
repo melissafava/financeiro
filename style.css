@@ -1,74 +1,51 @@
-h1{
-    color: darkcyan;
-    background-color: rgb(110, 214, 209);
-    border: 7px solid;
-    border-color:darkcyan;
-    border-radius: 10px;
+
+
+
+
+html{
+    height: 100vh;
+}
+
+
+
+body {
+    background-color: lavender;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    /* font-family:'Times New Roman', Times, serif; */
+    width: 800px;
+    /* height: 450px; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px lightslategray;
+    margin-top: 20px;
     
 }
 
-button{
-    font-size: 30px;
-    color: darkcyan;
-    background-color: rgb(110, 214, 209);
-    border: 6px solid;
-    border-color:darkcyan;
-    border-radius: 10px;
-    /* font-family:'Times New Roman', Times, serif; */
+h2 {
+    padding-top: 10px;
 }
 
-form{
-    text-align: center;
-    font-size: 30px;
-    color: darkcyan;
-    /* font-family:'Times New Roman', Times, serif; */
+.card-index {
+    /* width: 300px; */
+    /* height: 100 px; */
+    font-size: 20px;
+    padding: 50px;
 }
 
-p{
-    text-align: center;
-    font-size: 25px;
-    color: darkcyan;
-    /* font-family:'Times New Roman', Times, serif; */
+.nova_cat {
+    width: 80px;
+    height: 200 px;
+    font-size: 20px;
+    padding: 7px;
 }
 
-a{
-    color: lightseagreen;
-}
-
-label, input{
-    border-radius: 30px;
-    border-color: darkcyan;
-    background-color: rgb(246, 254, 255);
-    width: 150px;
-    height: 30px;
-    text-align: center;
-    color: darkcyan;
-    /* font-family:'Times New Roman', Times, serif; */
-    font-weight: bold;
-}
-
-/* table{
-    font-family:'Times New Roman', Times, serif;
-} */
-
-table thead{
-    color: darkcyan;
-}
-
-table tbody{
-    color: rgb(110, 214, 209);
-}
-
-table a{
-    color: lightseagreen;
-}
-
-body{
-    background-color: rgb(221, 253, 255);
-}
-
-h2, h3{
-    color: darkcyan;
+.cor {
+    background: linear-gradient(50deg, #fabc50, #f06dde);
+    
 }

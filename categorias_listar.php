@@ -31,73 +31,48 @@ $categorias = $stmt->fetchAll();
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Financeiro</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="categorias_listar.php">Categorias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="transacoes_listar.php">Transações</a>
-                    </li>
-                </ul>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-link">🤖Usuário: <?php echo $usuario_nome ?></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Sair</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body class="cor">
+    <?php include 'navbar.php'; ?>
 
     <div class="container">
 
-        <?php exibir_mensagem(); ?>
+        <div class="centralizar">
 
-        <h2>Categorias</h2>
+            <?php exibir_mensagem(); ?>
 
-        <div>
-            <a class="btn btn-primary" href="categorias_formulario.php">Nova Categoria</a>
-        </div>
+            <h2>Categorias</h2>
 
-        <?php if (count($categorias) > 0): ?>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Tipo</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($categorias as $categoria): ?>
+            <div>
+                <a class="btn btn-danger" class="nova_cat" href="categorias_formulario.php">Nova Categoria</a>
+            </div>
+
+            <?php if (count($categorias) > 0): ?>
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td><?php echo htmlspecialchars($categoria['nome']); ?></td>
-                            <td><?php echo ucfirst($categoria['tipo']); ?></td>
-                            <td>
-                                <a class="btn btn-success" href="categorias_formulario.php?id=<?php echo $categoria['id_categoria']; ?>">Editar</a>
-                                <a class="btn btn-danger" href="categorias_excluir.php?id=<?php echo $categoria['id_categoria']; ?>"
-                                    onclick="return confirm('Tem certeza que deseja excluir esta categoria?');">Excluir</a>
-                            </td>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <p>Nenhuma categoria cadastrada ainda.</p>
-        <?php endif; ?>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($categorias as $categoria): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($categoria['nome']); ?></td>
+                                <td><?php echo ucfirst($categoria['tipo']); ?></td>
+                                <td>
+                                    <a class="btn btn-outline-danger" href="categorias_formulario.php?id=<?php echo $categoria['id_categoria']; ?>">Editar</a>
+                                    <a class="btn btn-danger" href="categorias_excluir.php?id=<?php echo $categoria['id_categoria']; ?>"
+                                        onclick="return confirm('Tem certeza que deseja excluir esta categoria?');">Excluir</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>Nenhuma categoria cadastrada ainda.</p>
+            <?php endif; ?>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

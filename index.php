@@ -50,74 +50,74 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Financeiro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <h1>Sistema Financeiro</h1>
+<body class="cor">
+    <?php include 'navbar.php'; ?>
 
-    <div>
-        <p>Bem-vindo, <strong> <?php echo $usuario_nome ?> </strong></p>
-        <a href="logout.php">Sair</a>
-    </div>
-    <?php exibir_mensagem(); ?>
+    <div class="container">
 
-    <nav>
-        <ul>
-            <li><a href="index.php">Dashboard</a></li>
-            <li><a href="categorias_listar.php">Categorias</a></li>
-            <li><a href="transacoes_listar.php">transações</a></li>
-        </ul>
-    </nav>
+        <?php exibir_mensagem(); ?>
 
-    <h2>Resumo Financeiro</h2>
+        <h2>Resumo Financeiro</h2>
 
-    <div>
-        <div>
-            <h3>Receitas</h3>
-            <p>R$ <?php echo number_format($total_receitas, 2, ',', '.') ?></p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <div class="btn btn-success card-index">
+                <h3>💵</h3>
+                <h3>Receitas</h3>
+                <p>R$ <?php echo number_format($total_receitas, 2, ',', '.') ?></p>
+            </div>
+
+            <div class="btn btn-danger card-index">
+                <h3>💸</h3>
+                <h3>Despesas</h3>
+                <p>R$ <?php echo number_format($total_despesas, 2, ',', '.') ?></p>
+            </div>
+
+            <div class="btn btn-warning card-index">
+                <h3>💰</h3>
+                <h3>Saldo</h3>
+                <p>R$ <?php echo number_format($saldo, 2, ',', '.') ?></p>
+            </div>
         </div>
+        <h2>Últimas Transações</h2>
 
-        <div>
-            <h3>Despesas</h3>
-            <p>R$ <?php echo number_format($total_despesas, 2, ',', '.') ?></p>
-        </div>
-
-        <div>
-            <h3>Saldo</h3>
-            <p>R$ <?php echo number_format($saldo, 2, ',', '.') ?></p>
-        </div>
-    </div>
-    <h2>Últimas Transações</h2>
-    
-    <?php if (count($ultimas_transacoes) > 0): ?>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Descrição</th>
-                    <th>Categoria</th>
-                    <th>Tipo</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($ultimas_transacoes as $transacao): ?>
+        <?php if (count($ultimas_transacoes) > 0): ?>
+            <table class="table">
+                <thead>
                     <tr>
-                        <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
-                        <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
-                        <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
-                        <td><?php echo ucfirst($transacao['tipo']); ?></td>
-                        <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        
-        <p><a href="transacoes_listar.php">Ver todas as transações</a></p>
-    <?php else: ?>
-        <p>Nenhuma transação cadastrada ainda.</p>
-        <p><a href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
-    <?php endif; ?>
+                </thead>
+                <tbody>
+                    <?php foreach ($ultimas_transacoes as $transacao): ?>
+                        <tr>
+                            <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
+                            <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
+                            <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
+                            <td><?php echo ucfirst($transacao['tipo']); ?></td>
+                            <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <br>
+
+            <h5><a class="btn btn-outline-danger" href="transacoes_listar.php">Ver todas as transações</a></h5>
+        <?php else: ?>
+            <h5>Nenhuma transação cadastrada ainda.</h5>
+            <p><a class="btn btn-outline-danger" href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
+
+        <?php endif; ?>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </div>
 </body>
+
 </html>
