@@ -53,6 +53,7 @@ $categorias = $stmt_categorias->fetchAll();
 <body class="cor">
     <?php include 'navbar.php'; ?>
     <div class="container">
+        <button type="button" class="btn-close" aria-label="Close" onclick="history.back ()"></button>
         <h1>Sistema Financeiro Pessoal</h1>
 
         <?php exibir_mensagem(); ?>
@@ -117,8 +118,8 @@ $categorias = $stmt_categorias->fetchAll();
                 <br>
 
                 <div>
-                    <button class="btn btn-danger" type="submit">Salvar</button>
-                    <a class="btn btn-outline-danger" href="transacoes_listar.php">Cancelar</a>
+                    <button class="btn" type="submit">Salvar</button>
+                    <a class="btn" href="transacoes_listar.php">Cancelar</a>
                 </div>
                 <br>
             </form>

@@ -64,20 +64,20 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
         <h2>Resumo Financeiro</h2>
 
         <div class="btn-group" role="group" aria-label="Basic example">
-            <div class="btn btn-success card-index">
-                <h3>💵</h3>
+            <div class="btn card-index">
+
                 <h3>Receitas</h3>
                 <p>R$ <?php echo number_format($total_receitas, 2, ',', '.') ?></p>
             </div>
 
-            <div class="btn btn-danger card-index">
-                <h3>💸</h3>
+            <div class="btn card-index">
+
                 <h3>Despesas</h3>
                 <p>R$ <?php echo number_format($total_despesas, 2, ',', '.') ?></p>
             </div>
 
-            <div class="btn btn-warning card-index">
-                <h3>💰</h3>
+            <div class="btn card-index">
+
                 <h3>Saldo</h3>
                 <p>R$ <?php echo number_format($saldo, 2, ',', '.') ?></p>
             </div>
@@ -85,39 +85,42 @@ $ultimas_transacoes = $stmt_ultimas->fetchAll();
         <h2>Últimas Transações</h2>
 
         <?php if (count($ultimas_transacoes) > 0): ?>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                        <th>Tipo</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($ultimas_transacoes as $transacao): ?>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
-                            <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
-                            <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
-                            <td><?php echo ucfirst($transacao['tipo']); ?></td>
-                            <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($ultimas_transacoes as $transacao): ?>
+                            <tr>
+                                <td><?php echo date('d/m/Y', strtotime($transacao['data_transacao'])); ?></td>
+                                <td><?php echo htmlspecialchars($transacao['descricao']); ?></td>
+                                <td><?php echo htmlspecialchars($transacao['categoria_nome'] ?? 'Sem categoria'); ?></td>
+                                <td><?php echo ucfirst($transacao['tipo']); ?></td>
+                                <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
             <br>
 
-            <h5><a class="btn btn-outline-danger" href="transacoes_listar.php">Ver todas as transações</a></h5>
+            <h5><a class="btn" href="transacoes_listar.php">Ver todas as transações</a></h5>
         <?php else: ?>
             <h5>Nenhuma transação cadastrada ainda.</h5>
-            <p><a class="btn btn-outline-danger" href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
+            <p><a class="btn" href="transacoes_formulario.php">Cadastrar primeira transação</a></p>
 
         <?php endif; ?>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </div>
+    <br>
 </body>
 
 </html>

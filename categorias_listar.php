@@ -43,8 +43,9 @@ $categorias = $stmt->fetchAll();
             <h2>Categorias</h2>
 
             <div>
-                <a class="btn btn-danger" class="nova_cat" href="categorias_formulario.php">Nova Categoria</a>
+                <a class="btn" class="nova_cat" href="categorias_formulario.php">Nova Categoria</a>
             </div>
+            <br>
 
             <?php if (count($categorias) > 0): ?>
                 <table class="table">
@@ -61,8 +62,8 @@ $categorias = $stmt->fetchAll();
                                 <td><?php echo htmlspecialchars($categoria['nome']); ?></td>
                                 <td><?php echo ucfirst($categoria['tipo']); ?></td>
                                 <td>
-                                    <a class="btn btn-outline-danger" href="categorias_formulario.php?id=<?php echo $categoria['id_categoria']; ?>">Editar</a>
-                                    <a class="btn btn-danger" href="categorias_excluir.php?id=<?php echo $categoria['id_categoria']; ?>"
+                                    <a class="btn" href="categorias_formulario.php?id=<?php echo $categoria['id_categoria']; ?>">Editar</a>
+                                    <a class="btn" href="categorias_excluir.php?id=<?php echo $categoria['id_categoria']; ?>"
                                         onclick="return confirm('Tem certeza que deseja excluir esta categoria?');">Excluir</a>
                                 </td>
                             </tr>

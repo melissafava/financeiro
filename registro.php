@@ -53,12 +53,12 @@ if (isset($_SESSION['usuario_id'])) {
             <br>
 
             <div>
-                <button class="btn btn-danger" type="submit">Cadastrar</button>
+                <button class="btn" type="submit">Cadastrar</button>
             </div>
         </form>
         <br>
 
-        <p>Já tem conta? <a class="btn btn-outline-danger" href="login.php">Faça login aqui</a></p>
+        <p>Já tem conta? <a class="btn" href="login.php">Faça login aqui</a></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>

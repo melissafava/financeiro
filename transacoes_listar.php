@@ -67,7 +67,7 @@ $categorias = $stmt_categorias->fetchAll();
         <h2>Transações</h2>
 
         <div>
-            <a class="btn btn-danger" href="transacoes_formulario.php">Nova Transação</a>
+            <a class="btn" href="transacoes_formulario.php">Nova Transação</a>
         </div>
         <br>
 
@@ -77,15 +77,15 @@ $categorias = $stmt_categorias->fetchAll();
             <!-- TIPO -->
             <div>
                 <label for="tipo">Tipo:</label>
-                <select class="btn btn-primary dropdown-toggle btn btn-danger" id="tipo" name="tipo">
+                <select class="dropdown-toggle btn" id="tipo" name="tipo">
                     <option value="">Todos</option>
                     <option value="receita" <?php echo $filtro_tipo === 'receita' ? 'selected' : ''; ?>>Receita</option>
                     <option value="despesa" <?php echo $filtro_tipo === 'despesa' ? 'selected' : ''; ?>>Despesa</option>
                 </select>
-     
+
                 <!-- CATEGORIA -->
                 <label for="categoria">Categoria:</label>
-                <select class="btn btn-primary dropdown-toggle btn btn-danger" id="categoria" name="categoria">
+                <select class="dropdown-toggle btn" id="categoria" name="categoria">
                     <option value="">Todas</option>
                     <?php foreach ($categorias as $categoria): ?>
                         <option value="<?php echo $categoria['id_categoria']; ?>"
@@ -97,8 +97,8 @@ $categorias = $stmt_categorias->fetchAll();
             </div>
             <br>
             <div>
-                <button class="btn btn-outline-danger" type="submit">Filtrar</button>
-                <a class="btn btn-danger" href="transacoes_listar.php">Limpar Filtros</a>
+                <button class="btn" type="submit">Filtrar</button>
+                <a class="btn" href="transacoes_listar.php">Limpar Filtros</a>
             </div>
             <br>
         </form>
@@ -124,8 +124,8 @@ $categorias = $stmt_categorias->fetchAll();
                             <td><?php echo ucfirst($transacao['tipo']); ?></td>
                             <td>R$ <?php echo number_format($transacao['valor'], 2, ',', '.'); ?></td>
                             <td>
-                                <a class="btn btn-outline-danger" href="transacoes_formulario.php?id=<?php echo $transacao['id_transacao']; ?>">Editar</a>
-                                <a class="btn btn-danger" href="transacoes_excluir.php?id=<?php echo $transacao['id_transacao']; ?>"
+                                <a class="btn" href="transacoes_formulario.php?id=<?php echo $transacao['id_transacao']; ?>">Editar</a>
+                                <a class="btn" href="transacoes_excluir.php?id=<?php echo $transacao['id_transacao']; ?>"
                                     onclick="return confirm('Tem certeza que deseja excluir esta transação?');">Excluir</a>
                             </td>
                         </tr>
@@ -137,6 +137,7 @@ $categorias = $stmt_categorias->fetchAll();
         <?php endif; ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </div>
+    <br>
 </body>
 
 </html>
